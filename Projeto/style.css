@@ -80,7 +80,7 @@ body * {
 
   position: absolute;
   top: 50%;
-  right: 0;
+  left: 0;
   z-index: 1;
   transform: translateY(-50%);
 }
@@ -99,6 +99,7 @@ body * {
 .light #switch button {
   right: 50%;
   left: initial;
+  right: 0;
 }
 /* Para a lista */
 
