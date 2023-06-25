@@ -1,0 +1,164 @@
+* {
+  /* Para aplicar a todos os elementos */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Para o padding não aumentar o tamanho do elemento */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center; /* Center the image  */
+  /*background-size: cover; */ /* Resize the background image to cover the entire container se usasse o contain ia preencher o body todo */
+
+  /* Posso fazer tudo o que fiz em cima da seguinte forma */
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+body * {
+  /* Para aplicar a todos os elementos dentro do body */
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  /*border: 1px solid red;*/
+  width: 360px;
+  margin: 56px auto 0px; /* Para ficar no centro, se tiver duas é em cima e em baixo, se tiver 3 vai aplicar a primeira em cima, a segunda nas laterais e a ultima em baixo, caso tenha 3 é no sentido dos relogio*/
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  /* ter o img aumenta a especificidade */
+  /*display: block; /* Para eu conseguir aplicar a margem preciso de mudar o display */
+  width: 112px; /* A altura não precisa de ser sempre definida*/
+  /*margin: auto;*/ /* As duas propriedades que tirei podem ser subsitutidas pelo # em cima */
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch {
+  position: relative; /* Para o botão ficar dentro do elemento */
+  margin: 0 auto;
+  width: 64px;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+  width: 63px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px); /* Para o background ficar mais escuro */
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 50%;
+  left: initial;
+}
+/* Para a lista */
+
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0px;
+}
+
+ul li a {
+  border: 1px solid var(--stroke-color);
+  display: flex;
+
+  padding: 16px 24px;
+  justify-content: center;
+  background: var(--surface-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(5px); /* Para o background ficar mais escuro */
+  -webkit-backdrop-filter: blur(5px); /* Para o background ficar mais escuro */
+
+  text-decoration: none; /* Para tirar o underline */
+  font-weight: 500;
+
+  transition: all 0.5s; /* Para fazer a transição de todas as propriedades mais suave */
+}
+
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  font-size: 30px; /* Para o tamanho dos icones */
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px; /*afastar mais os icones*/
+  margin: 0px 4px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+}
