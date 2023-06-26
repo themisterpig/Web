@@ -9,5 +9,5 @@ function toggleMode() {
     img.setAttribute("src", "./assets/Avatar-light.png")
   } else {
     img.setAttribute("src", "./assets/Avatar.png")
-  }
+  } //teste para o git
 }
