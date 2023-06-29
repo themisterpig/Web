@@ -12,10 +12,6 @@ Programa exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnolog
   <a href="#memo-licença">Licença</a>
 </p>
 
-<p align="center">
-  <img alt="projeto DevLinks" src="Dark mode.jpg" width="100%">
-</p>
-
 <br>
 
 <p align="center">
