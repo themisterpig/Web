@@ -34,6 +34,7 @@ body {
 
   /* Posso fazer tudo o que fiz em cima da seguinte forma */
   background: var(--bg-url) no-repeat top center / cover;
+  height: 100vh; /* Para o body ter a altura do ecrã */
 }
 
 body * {
@@ -84,6 +85,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-out 0.4s;
+}
+
+.light #switch button {
+  animation: slide-in 0.4s forwards; /* o forwards vai manter as propriedades da animação depois de ela acbar */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -97,11 +108,6 @@ body * {
   border-radius: 9999px;
 }
 
-.light #switch button {
-  right: 50%;
-  left: initial;
-  right: 0;
-}
 /* Para a lista */
 
 ul {
@@ -163,4 +169,37 @@ footer {
   text-align: center;
   padding: 24px 0;
   font-size: 14px;
+}
+
+/* media quereis */
+
+@media (min-width: 700px) {
+  /*so funciona se tiver isto no html <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/
+  /* para quando tem no minimo 700px*/
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animações */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
