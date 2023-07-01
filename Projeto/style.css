@@ -44,7 +44,8 @@ body * {
 
 #container {
   /*border: 1px solid red;*/
-  width: 360px;
+  width: 100%;
+  max-width: 588px; /* Para o container não ficar maior que o tamanho do ecrã */
   margin: 56px auto 0px; /* Para ficar no centro, se tiver duas é em cima e em baixo, se tiver 3 vai aplicar a primeira em cima, a segunda nas laterais e a ultima em baixo, caso tenha 3 é no sentido dos relogio*/
 }
 
